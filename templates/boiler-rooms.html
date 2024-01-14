@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Котельные</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<button id="reset-errors">Сброс ошибок</button>
+{{range .}}
+<div class="boiler-room">
+    <h2>ID котельной: {{.ID}}</h2>
+    <img src="{{.ImageURL}}" alt="Изображение котельной">
+    <div class="parameters">
+        <span>Температура подачи: {{.TPod}} °C</span>
+        <span>Давление подачи: {{.PPod}} МПа</span>
+        <span>Температура улицы: {{.TUlica}} °C</span>
+    </div>
+    <div class="control">
+        <button class="control-button">+</button>
+        <span>Температура контроллера: {{.TPlan}} °C</span>
+        <button class="control-button">-</button>
+    </div>
+    <div class="control">
+        <button class="control-button">+</button>
+        <span>Ср. точка аварии: {{.TAlarm}} °C</span>
+        <button class="control-button">+</button>
+    </div>
+</div>
+{{end}}
+<script src="/static/js/main.js"></script>
+</body>
+</html>

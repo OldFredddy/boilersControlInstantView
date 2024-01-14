@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.boiler-room {
+    background-color: white;
+    margin: 20px auto;
+    width: 80%;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.boiler-room h2 {
+    color: #333;
+}
+
+.parameters, .control {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.parameters span, .control span {
+    margin-right: 15px;
+}
+/* Стили для кнопки сброса ошибок */
+#reset-errors {
+    background-color: #ff4d4d; /* Ярко-красный цвет фона */
+    color: white; /* Белый текст */
+    border: none; /* Убрать границу */
+    padding: 12px 20px; /* Паддинг для размера кнопки */
+    margin: 20px auto; /* Выравнивание по центру и отступ сверху и снизу */
+    display: block; /* Заставить кнопку занимать всю ширину контейнера */
+    text-align: center; /* Текст по центру */
+    border-radius: 5px; /* Скруглённые углы */
+    font-size: 16px; /* Размер шрифта */
+    cursor: pointer; /* Курсор в виде указателя */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для трёхмерного эффекта */
+    transition: background-color 0.3s; /* Плавное изменение цвета при наведении */
+}
+
+/* Стиль для наведения на кнопку */
+#reset-errors:hover {
+    background-color: #cc0000; /* Темно-красный цвет при наведении */
+}
+
+
+
+.control-button {
+    background-color: #4CAF50; /* Green background */
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.control-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+.control img {
+    width: 50px;
+    height: 50px;
+}
