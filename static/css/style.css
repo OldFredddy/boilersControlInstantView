@@ -1,72 +1,77 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+    background-color: #121212; /* Темный фон */
+    color: #ffffff; /* Светлый текст */
+    font-family: Arial, sans-serif; /* Чистый шрифт */
 }
 
-.boiler-room {
-    background-color: white;
-    margin: 20px auto;
-    width: 80%;
+.boiler-room-container {
+    padding: 20px;
+}
+
+.boiler {
+    background-color: #1e1e1e; /* Немного светлее фона */
+    border-radius: 8px; /* Закругленные углы */
     padding: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Небольшая тень */
 }
 
-.boiler-room h2 {
-    color: #333;
+.boiler img {
+    width: auto;
+    height: auto;
+    border-radius: 4px; /* Закругленные углы для изображений */
 }
 
-.parameters, .control {
+.parameters span {
+    display: block; /* Каждый параметр на новой строке */
+    margin-bottom: 5px;
+}
+
+button {
+    background-color: #0a84ff; /* Яркий цвет для акцентов */
+    color: white;
+    align-content: center;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0066cc; /* Темнее при наведении */
+}
+
+/* Дополнительные стили для сообщений об ошибках, предупреждений и т.д. */
+.error {
+    color: #ff0033; /* Красный для ошибок */
+}
+
+.success {
+    color: #33cc33; /* Зеленый для успешных действий */
+}
+
+/* Адаптивность и медиа-запросы при необходимости */
+@media (max-width: 600px) {
+    .boiler {
+        padding: 10px;
+    }
+}
+.boiler {
+    text-align: center;
+}
+
+.boiler-header {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    justify-content: center;
 }
 
-.parameters span, .control span {
-    margin-right: 15px;
-}
-/* Стили для кнопки сброса ошибок */
-#reset-errors {
-    background-color: #ff4d4d; /* Ярко-красный цвет фона */
-    color: white; /* Белый текст */
-    border: none; /* Убрать границу */
-    padding: 12px 20px; /* Паддинг для размера кнопки */
-    margin: 20px auto; /* Выравнивание по центру и отступ сверху и снизу */
-    display: block; /* Заставить кнопку занимать всю ширину контейнера */
-    text-align: center; /* Текст по центру */
-    border-radius: 5px; /* Скруглённые углы */
-    font-size: 16px; /* Размер шрифта */
-    cursor: pointer; /* Курсор в виде указателя */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для трёхмерного эффекта */
-    transition: background-color 0.3s; /* Плавное изменение цвета при наведении */
+.boiler-image {
+    height: 1.2em; /* Размер изображения соответствует размеру шрифта */
+    margin-right: 0.5em;
 }
 
-/* Стиль для наведения на кнопку */
-#reset-errors:hover {
-    background-color: #cc0000; /* Темно-красный цвет при наведении */
-}
-
-
-
-.control-button {
-    background-color: #4CAF50; /* Green background */
-    border: none;
-    color: white;
-    padding: 10px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-.control-button:hover {
-    background-color: #45a049; /* Darker green on hover */
-}
-.control img {
-    width: 50px;
-    height: 50px;
+.parameters {
+    font-size: 0.9em; /* Уменьшенный размер шрифта для параметров */
 }
