@@ -66,6 +66,9 @@ button:hover {
     align-items: center;
     justify-content: center;
 }
+.boiler-header h2 {
+    font-size: 24px; /* Увеличиваем размер шрифта для названий котельных */
+}
 
 .boiler-image {
     height: 1.2em; /* Размер изображения соответствует размеру шрифта */

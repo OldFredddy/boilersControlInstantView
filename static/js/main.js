@@ -85,13 +85,16 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch(error => console.error('Ошибка инициализации данных: ', error));
     }
-    function createChart(ctx, data, label) {
+    function createChart(ctx, rawData, label) {
         const now = new Date();
-        const timezoneOffset = 9 * 60 * 60 * 1000; // Смещение для МСК+9 в миллисекундах
+        // Нет необходимости менять timezoneOffset, если оно уже правильно задано
+        const timezoneOffset = 9 * 60 * 60 * 1000;
 
+        // Фильтрация данных - берем каждый второй элемент
+        const data = rawData.filter((_, index) => index % 2 === 0);
         const timeLabels = data.map((_, index) => {
-            // Корректировка времени для каждой точки данных
-            const date = new Date(now.getTime() - (8 * 60 * 60 * 1000) + (index * (8 * 60 * 60 * 1000 / data.length)) + timezoneOffset);
+            // Корректировка времени для каждой точки данных без учета +9 часов
+            const date = new Date(now.getTime() - (8 * 60 * 60 * 1000) + (index * (16 * 60 * 60 * 1000 / data.length)));
             return moment(date).format('HH:mm');
         });
 
