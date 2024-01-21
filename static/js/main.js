@@ -87,14 +87,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     function createChart(ctx, rawData, label) {
         const now = new Date();
-        // Нет необходимости менять timezoneOffset, если оно уже правильно задано
-        const timezoneOffset = 9 * 60 * 60 * 1000;
-
-        // Фильтрация данных - берем каждый второй элемент
         const data = rawData.filter((_, index) => index % 2 === 0);
+
+        const totalDuration = 16 * 60 * 60 * 1000; // Общая продолжительность данных в миллисекундах (16 часов)
+        const startTime = new Date(now.getTime() - totalDuration); // Начальное время для первой точки данных
+
         const timeLabels = data.map((_, index) => {
-            // Корректировка времени для каждой точки данных без учета +9 часов
-            const date = new Date(now.getTime() - (8 * 60 * 60 * 1000) + (index * (16 * 60 * 60 * 1000 / data.length)));
+            // Время для каждой точки данных
+            const date = new Date(startTime.getTime() + (index * (totalDuration / data.length)));
             return moment(date).format('HH:mm');
         });
 
